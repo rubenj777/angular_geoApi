@@ -1,0 +1,11 @@
+<form id="form" (ngSubmit)="submit(form)" #form="ngForm">
+  <input
+    type="text"
+    placeholder="Nom de la commune"
+    [(ngModel)]="nom"
+    name="nom"
+  />
+  <input type="submit" value="submit" [disabled]="!form.valid" />
+</form>
+
+<p *ngFor="let c of tabCommune">{{ c.nom }}</p>
