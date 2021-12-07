@@ -1,1 +1,12 @@
-<app-commune></app-commune>
+<form (ngSubmit)="lancerRecherche()">
+  <input type="text" [(ngModel)]="nomCommune" name="nomCommune" required />
+  <input type="submit" value="rechercher" />
+</form>
+
+<div *ngIf="tabCommunes">
+  <p>Résultat de la recherhe</p>
+  <p>{{ tabCommunes.length }} trouvées</p>
+  <ul>
+    <li *ngFor="let c of tabCommunes">{{ c.nom }}</li>
+  </ul>
+</div>
